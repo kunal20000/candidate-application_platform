@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 
 const MainContent = () => {
+  // all task are done tech stack and remote not availble in api
   const [content, setContent] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);

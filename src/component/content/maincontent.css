@@ -128,7 +128,7 @@
 }
 
 
-/* Add styles for tablets (landscape) and small desktops */
+/*  styles for tablets (landscape) and small desktops */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .job-container {
     justify-content: flex-start;
@@ -138,7 +138,7 @@
   }
 }
 
-/* Add styles for tablets (portrait) */
+/* styles for tablets (portrait) */
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   .job-container {
     justify-content: center;
