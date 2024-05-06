@@ -169,7 +169,7 @@
   }
 }
 
-/* Add styles for mobile devices */
+/* styles for mobile devices */
 @media only screen and (max-width: 480px) {
   .job-container {
     justify-content: center;
