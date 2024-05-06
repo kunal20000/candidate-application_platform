@@ -1,0 +1,167 @@
+
+
+.job-filter-container{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin: 20px;
+}
+.role-container{
+   border: 1px solid #ccc;
+   padding: 10px;
+   height: auto;
+   width: auto;
+   display: flex;
+   gap: 20px;
+   border-radius: 7px;
+ 
+   
+  }
+  .role-container label {
+    color: #5e5a5a;
+  }
+  .role-container select{
+    border: none;
+    color: #ccc;
+    outline: none;
+  }
+  .role-container input{
+    border: none;
+    color: #ccc;
+    text-decoration: none;
+    padding: 5px;
+    outline: none;
+  }
+.job-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.job-card {
+  border: 1px solid #ccc;
+  height: auto;
+  width: 350px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.logo-container {
+  display: flex;
+  justify-content: left;
+}
+
+.logo-container img {
+  width: 30px;
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.logo-container div h6 {
+  margin-top: 10px;
+  color: dimgray;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+}
+.job-info h6,
+.job-info p {
+  margin: 0;
+}
+
+.job-info p:first-of-type {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: slategrey;
+}
+
+.job-info p:nth-of-type(2) {
+  font-size: small;
+  text-transform: capitalize;
+  font-weight: 450;
+}
+
+.job-info2 p {
+  margin: 10px;
+  font-size: 14.5px;
+  color: #857f7f;
+}
+.job-info2 b {
+  margin: 10px;
+}
+.job-info2 strong {
+  margin: 10px;
+}
+.apply-btn {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(16, 212, 212);
+  font-weight: 700;
+  cursor: pointer;
+}
+.referral-btn {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(30, 24, 121);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.toggle-btn{
+  
+  margin-top: 0px;
+  border: none;
+  background: none;
+  margin-left: 2px;
+}
+
+
+/* Add styles for tablets (landscape) and small desktops */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .job-container {
+    justify-content: flex-start;
+  }
+  .job-card {
+    width: calc(50% - 30px);
+  }
+}
+
+/* Add styles for tablets (portrait) */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .job-container {
+    justify-content: center;
+  }
+  .job-card {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Add styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  .job-container {
+    justify-content: center;
+  }
+  .job-card {
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+  }
+  .job-filter-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .role-container {
+    width: calc(100% - 20px);
+  }
+}
