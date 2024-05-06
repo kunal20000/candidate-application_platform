@@ -17,8 +17,10 @@ const MainContent = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
   const [isExpanded, setIsExpanded] = useState(false); // State for expanded job
   const [expandedIndices, setExpandedIndices] = useState([]); // State for expanded job indices
-  const observer = useRef();
+  const observer = useRef(); // Ref for intersection observer
 
+
+  // Headers and body for API request
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -39,7 +41,7 @@ const MainContent = () => {
     headers: myHeaders,
     body,
   };
-
+    // Function to fetch data
   const fetchData = async () => {
     setIsLoading(true);
     try {
@@ -61,6 +63,8 @@ const MainContent = () => {
     setIsLoading(false);
   };
 
+
+ // Fetch data on initial load and when filters change
   useEffect(() => {
     fetchData();
   }, [
@@ -71,10 +75,13 @@ const MainContent = () => {
     searchTerm,
   ]);
 
+
+  // Fetch more data on pagination change
   useEffect(() => {
     fetchData();
   }, [page]);
 
+  // Intersection observer to trigger pagination
   useEffect(() => {
     if (!hasMore) return;
     const options = {
@@ -99,6 +106,7 @@ const MainContent = () => {
     };
   }, [hasMore]);
 
+  // Fetch data when page changes
   useEffect(() => {
     if (page > 1) {
       fetchData();
@@ -124,7 +132,7 @@ const MainContent = () => {
     setPage(1);
     setHasMore(true);
   };
-
+ // Event handler for location change
   const handleLocationChange = (e) => {
     setSelectedLocation(e.target.value);
     setContent([]);
@@ -132,6 +140,7 @@ const MainContent = () => {
     setHasMore(true);
   };
 
+// Event handler for experience change
   const handleExperienceChange = (e) => {
     setSelectedExperience(e.target.value);
     setContent([]);
@@ -139,6 +148,7 @@ const MainContent = () => {
     setHasMore(true);
   };
 
+  // Event handler for salary change
   const handleSalaryChange = (e) => {
     setSelectedSalary(e.target.value);
     setContent([]);
@@ -157,6 +167,7 @@ const MainContent = () => {
   return (
     <div className="job-portal">
       <div className="job-filter-container">
+         {/* Role filter */}
         <div className="role-container">
           <label htmlFor="role">Roles</label>
           <select
@@ -172,6 +183,7 @@ const MainContent = () => {
             <option value="android">Android</option>
           </select>
         </div>
+          {/* Location filter */}
         <div className="role-container">
           <label htmlFor="location">location</label>
           <select
@@ -188,6 +200,7 @@ const MainContent = () => {
             <option value="banglore">Banglore</option>
           </select>
         </div>
+         {/* Experience filter */}
         <div className="role-container">
           <label htmlFor="experience">Experience</label>
           <select
@@ -202,14 +215,7 @@ const MainContent = () => {
             <option value="3">3</option>
           </select>
         </div>
-        {/* <div className="role-container">
-          <label htmlFor="remote">Remote</label>
-          <select name="remote" id="remote">
-            <option value="hybrid">Hybrid</option>
-            <option value="onsite">Onsite</option>
-            <option value="distributed">Distributed</option>
-          </select>
-        </div> */}
+        {/* Salary filter */}
         <div className="role-container">
           <label htmlFor="salary">Minimum Base Pay Salary</label>
           <select
@@ -224,6 +230,7 @@ const MainContent = () => {
             <option value="30">30</option>
           </select>
         </div>
+        {/* Search input */}
         <div className="role-container">
           <input
             type="text"
