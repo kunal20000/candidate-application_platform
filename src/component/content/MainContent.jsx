@@ -313,7 +313,7 @@ const MainContent = () => {
               </div>
             );
           })}
-        {isLoading && <div>Loading...</div>}
+        {isLoading && (<span class="loader"></span>)}
         {hasMore && <div ref={observer}></div>}
       </div>
       <div>
